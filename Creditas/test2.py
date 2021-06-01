@@ -17,10 +17,6 @@ def predict(model, input_df):
 
 def run():
     
-    from PIL import Image
-    image_perfil = Image.open('perfil.jpg')
-    
-
     add_selectbox = st.sidebar.selectbox(
     "How would you like to predict?",
     ("Online", "Batch"))
@@ -28,7 +24,6 @@ def run():
     st.sidebar.info('This app is created to predict credit classification')
     st.sidebar.success('https://www.linkedin.com/in/felipe-sembay/')
     
-    st.sidebar.image(image_perfil)
     
 
     st.title("Credit Loan Prediction App")
@@ -56,7 +51,7 @@ def run():
 
         if st.button("Predict"):
             output = predict(model=model, input_df=input_df)
-            output = float(output)
+            output = str(output)
             
           
         st.success('A probabilidade do seu empréstimo ser liberado é de {}'.format(output))

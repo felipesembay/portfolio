@@ -1,13 +1,12 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import seaborn as sns
-from pycaret.classification import *
+from pycaret.classification import load_model, predict_model
 model = load_model('gbc_model')
 
 
 # print title of web app
-st.title("Simulação de Classificação de Crédito - Demonstração de um aplicativo para Machine Learning")
+st.title("Si")
 st.markdown("Simulação de Classificação de Crédito, é um projeto para aprendizado")
 
 @st.cache
